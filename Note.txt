@@ -1,0 +1,42 @@
+Tại sao mỗi người đi vay với những điều kiện khác nhau (thu nhập, nhà cửa, mục đích đi vay, số năm làm việc, ...
+
+- 7 categorical
+	'Loan_Amount_Requested',: So luong tien muon vay
+ 	'Length_Employed',: Thoi gian lam viec hien tai lam viec cua nguoi di vay
+	 'Home_Owner',: Nha o hien tai cua nguoi di vay
+	 'Income_Verified',: Thu nhap da duoc xac thuc hay chua
+	 'Purpose_Of_Loan',: Muc dich di vay
+	 'Gender': Gioi tinh
+- 7 numerical
+	'Annual_Income': Thu nhap hang nam
+	'Debt_To_Income',: So tien no / muc thu nhap
+ 	'Inquiries_Last_6Mo',: So luong thac mac cua chu no trong 6 thang qua
+ 	'Months_Since_Deliquency',: So thang ke tu 
+ 	'Number_Open_Accounts',
+ 	'Total_Accounts',
+ 	'Interest_Rate'
+
+- Missing Value
+	+ Length_Employed
+	+ Home_Owner
+	+ Annual_Income
+	+ Months_Since_Deliquency
+
+	- Thay missing và value < 0 trong Annual_Income bằng mean
+	- Binning Annual_Income 
+	pd.cut(df['Annual_Income'],bins=[-np.inf,50000,100000,500000,np.inf], labels=[1,2,3,4]).astype(int)
+	- Dept = Annual_Income * Debt_To_Income (cùng đơn vị nha) 
+	+ Kiểm tra bằng sns.distplot(df['Debt'])
+	- Tại sao nên dùng log     df['LogDebt'] = df['Debt'].apply(lambda x: np.log(x) if x!= 0 else 0)  
+	+ Kiểm tra bằng sns.distplot(train_data['LogDebt'])
+
+	- #Credit Rating
+	df['Credit_rating'] = df['Debt']*0.4 + df['Annual_Income']*0.45 + df['Purpose_Of_Loan']*0.1
+	
+
+
+
+- 
+
+
+- Outlier 
