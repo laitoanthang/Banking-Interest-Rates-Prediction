@@ -16,6 +16,16 @@ Tại sao mỗi người đi vay với những điều kiện khác nhau (thu nh
  	'Total_Accounts',
  	'Interest_Rate'
 
+- Purpose of the loan:
+['car' 'credit_card' 'debt_consolidation' 'educational' 'home_improvement'
+   'house' 'major_purchase' 'medical' 'move' 'other' 'renewable_energy'
+   'small_business' 'holiday' 'wedding']
+	+ Mục đích vay dành cho tài sản (mục đích đẻ ra tiền)
+		* 'educational', 'home_improvement', 'house' 
+	+ Mục đích vay dành cho tiêu sản (mục đích ăn chơi và có thể lấy thêm thu nhập của bạn do chi phí dịch vụ)
+		* 'car', 'credit_card', 
+
+
 - Missing Value
 	+ Length_Employed
 	+ Home_Owner
@@ -34,9 +44,91 @@ Tại sao mỗi người đi vay với những điều kiện khác nhau (thu nh
 	df['Credit_rating'] = df['Debt']*0.4 + df['Annual_Income']*0.45 + df['Purpose_Of_Loan']*0.1
 	
 
+- Convert catogorical to numerical
+	+ Purpose_Of_Loan
+	+ Income_Verified
+	+ Home_Owner 
+	+ Length_Employed
+	+ Loan_Amount_Requested
 
 
 - 
 
 
 - Outlier 
+
+
+
+
+- MODEL TRAINING
++ BASE LINE
+	* Decision tree accuracy is:
+	* RandomForestClassifier accuracy is:
+
++ DROP GENDER
+	* Decision tree accuracy is: 42.78%
+	* RandomForestClassifier accuracy is: 51.63%
+
++ outlier better
+	* Decision tree accuracy is:
+	* RandomForestClassifier accuracy is:
++ 
+	* Decision tree accuracy is: 42.79%
+	* RandomForestClassifier accuracy is:51.65%
++ 
+
+name	accuracy score	recall score
+0	GaussianNB	0.489887	0.489887
+1	RandomForest	0.516077	0.516077
+2	KNN	0.421378	0.421378
+
+	Name	Accuracy score	Recall score
+0	GaussianNB	49.76%	49.76%
+1	RandomForest	51.36%	51.36%
+2	KNN	44.82%	44.82%
+
+Name	Accuracy score
+0	GaussianNB	49.76%
+1	RandomForest	51.49%
+2	KNN	44.29%
+
+Name	Accuracy score
+0	Random Forest	51.65%
+1	Neural Networks (Multi-Layer Perceptron)	52.71%
+2	Gradient Boosting Classifier	53.62%
+
+Name	Accuracy score
+0	Random Forest	51.64%
+1	Neural Networks (Multi-Layer Perceptron)	53.02%
+2	Gradient Boosting Classifier	53.66%
+
+	* Decision tree accuracy is:
+	* RandomForestClassifier accuracy is:
++ 
+	* Decision tree accuracy is:
+	* RandomForestClassifier accuracy is:
++ 
+	* Decision tree accuracy is:
+	* RandomForestClassifier accuracy is:
++ 
+	* Decision tree accuracy is:
+	* RandomForestClassifier accuracy is:
++ 
+	* Decision tree accuracy is:
+	* RandomForestClassifier accuracy is:
+
+Name	Accuracy score
+0	Gaussian Naive Bayes	50.17%
+1	Random Forest	51.91%
+2	K-Nearest Neighbors Classifier	44.87%
+3	Neural Networks	53.14%
+4	Gradient Boosting Classifier	53.66%
+5	Support Vector Machines (SVM) Classifier	52.3%
+
+Name	Accuracy score
+0	Gaussian Naive Bayes	50.14%
+1	Random Forest	51.89%
+2	K-Nearest Neighbors Classifier	44.89%
+3	Neural Networks	53.09%
+4	Gradient Boosting Classifier	53.44%
+5	Support Vector Machines (SVM) Classifier	52.14%
